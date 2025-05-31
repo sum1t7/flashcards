@@ -1,0 +1,57 @@
+<div class="container">
+  <h1 class="main-heading">Flashcards</h1>
+  
+  <div class="input-container">
+    <form (submit)="addFlashcard(); $event.preventDefault()">
+      <input 
+        [(ngModel)]="newFlashcard.question" 
+        type="text" 
+        class="input-fields" 
+        placeholder="Enter your question..." 
+        name="question"
+        required>
+      
+      <input 
+        [(ngModel)]="newFlashcard.answer" 
+        type="text" 
+        class="input-fields" 
+        placeholder="Enter the answer..." 
+        name="answer"
+        required>
+      
+      <button type="submit" class="add-button">Add Flashcard</button>
+    </form>
+  </div>
+
+  <div class="card-container" *ngIf="flashcards.length > 0; else emptyState">
+    <div 
+      class="flashcard"
+      *ngFor="let flashcard of flashcards"
+      [class.flipped]="flashcard.flipped"
+      (click)="flip(flashcard)">
+      
+      <button 
+        class="delete-button" 
+        (click)="deleteFlashcard(flashcard.id!); $event.stopPropagation()"
+        aria-label="Delete flashcard">
+        ×
+      </button>
+      
+      <div class="card-inner">
+        <div class="card-face front">
+          {{ flashcard.question }}
+        </div>
+        <div class="card-face back">
+          {{ flashcard.answer }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #emptyState>
+    <div class="empty-state">
+      <div class="empty-icon">📚</div>
+      <p>No flashcards yet. Create your first one above!</p>
+    </div>
+  </ng-template>
+</div>
