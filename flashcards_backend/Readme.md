@@ -18,6 +18,8 @@ A PostreSQL database is set up for storage along with an angular frontend for us
 ## Getting Started
 
 
+Get the Spring Boot extention 
+
 1. **Clone the repository:**
     ```bash
     git clone https://github.com/sum1t7/flashcards
@@ -42,6 +44,7 @@ A PostreSQL database is set up for storage along with an angular frontend for us
 3. **Build and run:**
     ```bash
     ./mvnw spring-boot:run
+    or run with spring boot extention
     ```
   
 ## API Endpoints
