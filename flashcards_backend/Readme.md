@@ -9,9 +9,8 @@ A PostreSQL database is set up for storage along with an angular frontend for us
 - RESTful API endpoints 
 
 ## Technologies
-- Angular 
-- PostgreSQL
-- Java
+
+- Java 17+
 - Spring Boot
 - Spring Data JPA
 - Spring Security
@@ -21,7 +20,8 @@ A PostreSQL database is set up for storage along with an angular frontend for us
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/flashcards_backend.git
+    git clone https://github.com/sum1t7/flashcards
+    cd flashcards
     cd flashcards_backend
     ```
 
